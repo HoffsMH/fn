@@ -1,9 +1,10 @@
-package cmd
+package main
 
 import (
 	"fmt"
 	"os"
 	"github.com/spf13/cobra"
+	"prepend"
 )
 
 var cfgFile string
@@ -13,6 +14,7 @@ var rootCmd = &cobra.Command{
 	Use:   "fn",
 	Short: "file name utility",
 	Long: `stuff`,
+	Run: mv,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -32,4 +34,7 @@ func init() {
 	rootCmd.AddCommand(prependDateCmd)
 }
 
+func mv(cmd *cobra.Command, args []string) {
+	fmt.Println("hi")
+}
 
